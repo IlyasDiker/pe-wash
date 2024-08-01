@@ -16,13 +16,14 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->withPersonalTeam()->create();
 
         User::factory()->withPersonalTeam()->create([
-            'name' => 'Test User',
+            'name' => 'Admin User',
             'email' => 'admin@pe-wash.com',
             'password' => bcrypt('admin123'),
         ]);
 
         $this->call([
-            BizSeeder::class,
+            // BizSeeder::class,
+            GigSeeder::class,
         ]);
     }
 }

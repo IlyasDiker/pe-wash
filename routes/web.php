@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BizController;
+use App\Http\Controllers\GigController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -27,4 +28,6 @@ Route::middleware([
     Route::resource('bizs', BizController::class, [
         'only' => ['index', 'show'],
     ]);
+
+    Route::resource('gigs', GigController::class);
 });
