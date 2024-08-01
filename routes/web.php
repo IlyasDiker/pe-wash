@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BizController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -23,7 +24,7 @@ Route::middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
 
-    Route::resource('teams', TeamController::class, [
-        'only' => ['index'],
+    Route::resource('bizs', BizController::class, [
+        'only' => ['index', 'show'],
     ]);
 });
